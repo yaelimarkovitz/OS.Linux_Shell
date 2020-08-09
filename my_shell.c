@@ -107,7 +107,7 @@ int process_arglist(int count, char** arglist) {
         return 1;
     }
     int isPipe = check_pipe(arglist,count);
-    if(isPipe!=0){
+    if(isPipe){
         do_pipe(arglist,count,isPipe);
         return 1;
     }
@@ -123,7 +123,6 @@ int process_arglist(int count, char** arglist) {
     else{
         wait(NULL);
     }
-    printf(">>");
     return 1;
 }
 
